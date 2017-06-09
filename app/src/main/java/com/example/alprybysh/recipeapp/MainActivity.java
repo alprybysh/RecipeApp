@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements CardViewAdapter.R
 
     private RecyclerView mRecyclerView;
     private CardViewAdapter adapter;
-    private boolean mTwoPane;
+
 
 
     @Override

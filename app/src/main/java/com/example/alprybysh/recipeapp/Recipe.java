@@ -7,7 +7,6 @@ import android.util.Log;
 import java.util.ArrayList;
 
 
-
 /**
  * Created by aprybysh on 5/14/17.
  */
@@ -111,7 +110,6 @@ public class Recipe implements Parcelable {
     }
 
 
-
     @Override
     public int describeContents() {
         return 0;
@@ -144,9 +142,6 @@ public class Recipe implements Parcelable {
             return new Recipe[size];
         }
     };
-
-
-
 
 
     Recipe(Parcel in) {

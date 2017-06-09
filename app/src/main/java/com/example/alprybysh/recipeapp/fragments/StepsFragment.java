@@ -31,7 +31,7 @@ public class StepsFragment extends Fragment implements StepsAdapter.StepsOnClick
     private RecyclerView mRecyclerView;
     private StepsAdapter adapter;
     private ArrayList<String> mShortDescription;
-    private static final String INGREDEINTS = "INGREDIENTS:";
+    private static final String INGREDIENTS = "INGREDIENTS:";
 
     private OnRecipeSelectedListener mListener;
 
@@ -45,48 +45,47 @@ public class StepsFragment extends Fragment implements StepsAdapter.StepsOnClick
         View rootView = inflater.inflate(R.layout.recipe_steps_fragment, container, false);
 
 
+        context = getActivity();
 
-            context = getActivity();
-
-            mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view_fragment);
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view_fragment);
 
         /*Setting the LinearLayoutManager as a manager for the RecyclerView*/
 
-            LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
 
-            mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setLayoutManager(layoutManager);
 
-            adapter = new StepsAdapter(context, this);
+        adapter = new StepsAdapter(context, this);
 
 
-            TextView ingred = (TextView) rootView.findViewById(R.id.ingredients_view);
-            TextView ingTitle = (TextView) rootView.findViewById(R.id.ingredients_title);
+        TextView ingred = (TextView) rootView.findViewById(R.id.ingredients_view);
+        TextView ingTitle = (TextView) rootView.findViewById(R.id.ingredients_title);
 
-            String str  = " ";
-            StringBuilder builder = new StringBuilder();
+        String str = " ";
+        StringBuilder builder = new StringBuilder();
 
-            for (int i = 0; i < RecipeData.getStIngredient().size(); i++ ){
-                builder.append(RecipeData.getStQuantity().get(i));
-                builder.append(str);
-                builder.append(RecipeData.getStMeasure().get(i));
-                builder.append(str);
-                builder.append(RecipeData.getStIngredient().get(i));
-                builder.append("."+str);
+        for (int i = 0; i < RecipeData.getStIngredient().size(); i++) {
+            builder.append(RecipeData.getStQuantity().get(i));
+            builder.append(str);
+            builder.append(RecipeData.getStMeasure().get(i));
+            builder.append(str);
+            builder.append(RecipeData.getStIngredient().get(i));
+            builder.append("." + str);
 
-            }
+        }
 
-            ingTitle.setText(INGREDEINTS);
-            ingred.setText(builder);
+        ingTitle.setText(INGREDIENTS);
+        ingred.setText(builder);
 
          /* Setting the adapter attaches it to the RecyclerView in our layout. */
-            mRecyclerView.setAdapter(adapter);
-            // recipesDetails = new FetchRecipesDetails(context);
-            //recipesDetails.execute(getArguments().getInt("id"));
+        mRecyclerView.setAdapter(adapter);
+        // recipesDetails = new FetchRecipesDetails(context);
+        //recipesDetails.execute(getArguments().getInt("id"));
 
-            mShortDescription = new ArrayList<>();
-            mShortDescription = RecipeData.getStShortDescription();
+        mShortDescription = new ArrayList<>();
+        mShortDescription = RecipeData.getStShortDescription();
 
-            adapter.setDataSteps(mShortDescription);
+        adapter.setDataSteps(mShortDescription);
 
 
         return rootView;
@@ -94,13 +93,13 @@ public class StepsFragment extends Fragment implements StepsAdapter.StepsOnClick
 
 
     @Override
-    public void onItemClick(ArrayList<String> itemClicked , int position) {
+    public void onItemClick(ArrayList<String> itemClicked, int position) {
 
         Toast.makeText(context, itemClicked.get(position), Toast.LENGTH_SHORT).show();
 
         mListener.onRecipeSelected(position);
 
-   }
+    }
 
 
     public interface OnRecipeSelectedListener {

@@ -49,10 +49,6 @@ public class DescriptionFragment extends Fragment {
     private static final String KEYID = "keyId";
     private boolean mTwoPane;
 
-    @BindView (R.id.playerView)
-    ImageView mPoster;
-
-
     public DescriptionFragment() {
     }
 
@@ -64,8 +60,7 @@ public class DescriptionFragment extends Fragment {
         stepsId = getArguments().getInt(KEYID);
         mTwoPane = getArguments().getBoolean(TWOPANELKEY);
 
-        if (!mTwoPane){
-
+        if (!mTwoPane) {
             nextButton = (Button) rootView.findViewById(R.id.next_button);
             previousButton = (Button) rootView.findViewById(R.id.previous__button);
             previousButton.setText("Previous step");
@@ -76,16 +71,16 @@ public class DescriptionFragment extends Fragment {
 
         descrip = (TextView) rootView.findViewById(R.id.description);
 
-            if (RecipeData.getStVideoURL().get(stepsId).equals("")){
-                videoView.setDefaultArtwork(BitmapFactory.decodeResource(getResources(), R.drawable.stock));
-            }
-            initializePlayer(Uri.parse(RecipeData.getStVideoURL().get(stepsId)));
-            descrip.setText(RecipeData.getStDescripton().get(stepsId));
+        if (RecipeData.getStVideoURL().get(stepsId).equals("")) {
+            videoView.setDefaultArtwork(BitmapFactory.decodeResource(getResources(), R.drawable.stock));
+        }
+        initializePlayer(Uri.parse(RecipeData.getStVideoURL().get(stepsId)));
+        descrip.setText(RecipeData.getStDescripton().get(stepsId));
         return rootView;
 
     }
 
-//             Initialize ExoPlayer.
+    //             Initialize ExoPlayer.
 //          * @param mediaUri The URI of the sample to play.
 //          */
     private void initializePlayer(Uri mediaUri) {
@@ -95,7 +90,7 @@ public class DescriptionFragment extends Fragment {
             LoadControl loadControl = new DefaultLoadControl();
             mExoPlayer = ExoPlayerFactory.newSimpleInstance(context, trackSelector, loadControl);
             videoView.setPlayer(mExoPlayer);
-            if (!mediaUri.equals("")){
+            if (!mediaUri.equals("")) {
                 // Prepare the MediaSource.
                 String userAgent = Util.getUserAgent(context, String.valueOf(R.string.app_name));
                 MediaSource mediaSource = new ExtractorMediaSource(mediaUri, new DefaultDataSourceFactory(
@@ -141,7 +136,6 @@ public class DescriptionFragment extends Fragment {
             mExoPlayer.setPlayWhenReady(true);
         }
     }
-
 
 
 }

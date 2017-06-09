@@ -14,13 +14,12 @@ import com.example.alprybysh.recipeapp.RecipeDetails;
  * Created by aprybysh on 5/14/17.
  */
 
-public class FetchRecipesDetails extends AsyncTask<Integer, Void, Recipe>  {
+public class FetchRecipesDetails extends AsyncTask<Integer, Void, Recipe> {
 
     Context context;
     ProgressBar progressBar;
 
     private JsonReaderHelper jsonHelper;
-
 
 
     public FetchRecipesDetails(Context context) {
@@ -32,7 +31,7 @@ public class FetchRecipesDetails extends AsyncTask<Integer, Void, Recipe>  {
 
 
     @Override
-    protected  Recipe doInBackground(Integer... params) {
+    protected Recipe doInBackground(Integer... params) {
 
         int id = params[0];
 
@@ -49,11 +48,10 @@ public class FetchRecipesDetails extends AsyncTask<Integer, Void, Recipe>  {
     }
 
 
-
     @Override
     protected void onPostExecute(Recipe recipe) {
         progressBar.setVisibility(View.INVISIBLE);
-      // adapter.setDataSteps(recipe);
+        // adapter.setDataSteps(recipe);
 
     }
 

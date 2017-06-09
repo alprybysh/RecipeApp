@@ -81,7 +81,7 @@ public class JsonReaderHelper {
 
     }
 
-    private void loadIngredients (int id){
+    private void loadIngredients(int id) {
 
         if (array.length() == 0 || array == null) {
             return;
@@ -193,7 +193,7 @@ public class JsonReaderHelper {
 
     private ArrayList<String> getShortDescription() {
 
-       ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>();
 
         if (jsarr.length() == 0 || jsarr == null) {
             return null;
@@ -251,7 +251,7 @@ public class JsonReaderHelper {
         return list;
     }
 
-    private ArrayList<String> getQuntity () {
+    private ArrayList<String> getQuntity() {
 
         ArrayList<String> list = new ArrayList<>();
 
@@ -271,7 +271,7 @@ public class JsonReaderHelper {
         return list;
     }
 
-    private ArrayList<String> getMeasure () {
+    private ArrayList<String> getMeasure() {
 
         ArrayList<String> list = new ArrayList<>();
 
@@ -291,7 +291,7 @@ public class JsonReaderHelper {
         return list;
     }
 
-    private ArrayList<String> getIngredient () {
+    private ArrayList<String> getIngredient() {
 
         ArrayList<String> list = new ArrayList<>();
 
@@ -310,8 +310,6 @@ public class JsonReaderHelper {
 
         return list;
     }
-
-
 
 
     public ArrayList<Recipe> getRecipes(Context context) {
@@ -333,7 +331,7 @@ public class JsonReaderHelper {
         return list;
     }
 
-    public Recipe getRecipeDetails (int id, Context context){
+    public Recipe getRecipeDetails(int id, Context context) {
 
         loadJSONFromAsset(context);
         loadRecipeDetails(id);

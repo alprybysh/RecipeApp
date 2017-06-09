@@ -51,7 +51,7 @@ public class FetchRecipes extends AsyncTask<Void, Void, ArrayList<Recipe>> {
         super.onPostExecute(recipes);
         progressBar.setVisibility(View.INVISIBLE);
 
-        if (adapter != null){
+        if (adapter != null) {
             adapter.setCardAdapterDate(recipes);
         }
 

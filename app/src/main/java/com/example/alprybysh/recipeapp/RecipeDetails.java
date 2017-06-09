@@ -65,7 +65,7 @@ public class RecipeDetails extends AppCompatActivity implements StepsFragment.On
                 setTitle(myParcelableObject.getRecipeName());
                 recipesDetails = new FetchRecipesDetails(this);
                 mRecipe = new Recipe();
-                 // Set up Recipe data
+                // Set up Recipe data
                 try {
                     mRecipe = recipesDetails.execute(mRecipeId - 1).get();
                     RecipeData.setStShortDescription(mRecipe.getShortDescription());
@@ -135,6 +135,7 @@ public class RecipeDetails extends AppCompatActivity implements StepsFragment.On
             super.onBackPressed();
         }
     }
+
     //This method is used to open video for the selected video
     @Override
     public void onRecipeSelected(int id) {
@@ -168,6 +169,7 @@ public class RecipeDetails extends AppCompatActivity implements StepsFragment.On
         }
         fragmentId = 2;
     }
+
     //This method is used to open the previous video
     public void onClickPreviousStep(View view) {
 
@@ -181,6 +183,7 @@ public class RecipeDetails extends AppCompatActivity implements StepsFragment.On
         setDescriptionFragment();
 
     }
+
     //This method is used to open the next video
     public void onClickNextStep(View view) {
         if (stepsId == RecipeData.getStDescripton().size() - 1) {
@@ -202,6 +205,7 @@ public class RecipeDetails extends AppCompatActivity implements StepsFragment.On
                 .commit();
 
     }
+
     //This method is used to set up Steps Description
     public void setDescriptionFragment() {
 
