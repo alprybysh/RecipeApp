@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><!--Copyright (C) 2017 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+            android:id="@+id/playerView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            app:resize_mode="fill" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            style="@style/TextDescription"
+            tools:text="Example" />
+
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNextStep"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/devide"
+            android:layout_margin="@dimen/padding_medium"
+            android:gravity="center"
+            tools:text="Next" />
+
+        <View
+            android:id="@+id/devide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/previous__button"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/devide"
+            android:layout_margin="@dimen/padding_medium"
+            android:onClick="onClickPreviousStep"
+            android:gravity="center"
+            tools:text="Previous" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

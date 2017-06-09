@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Recipe App</string>
+    <string name="json_reader_error">Json reader error</string>
+    <string name="name_previous_button">Previous step</string>
+    <string name="name_next_button">Next step</string>
+    <string name="name_app">RecipeApp</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+</resources>
